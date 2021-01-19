@@ -23,10 +23,14 @@
 
     <div class="row">
         <div class="col-md-4 column">
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增</a>
+        </div>
+        <div class="col-md-4 column"></div>
+        <div class="col-md-4 column">
 
-<%--     查询--%>
+            <%--     查询--%>
             <form method="post" action="${pageContext.request.contextPath}/book/queryBook" style="float:right;display: inline-block;">
-                    <input type="text" name = "queryBookName" placeholder="请输入要查询的书籍" class="form-control" style="display: inline-block;width: auto;">
+                <input type="text" name = "queryBookName" placeholder="请输入要查询的书籍" class="form-control" style="display: inline-block;width: auto;">
                 <input type="submit" value="查询" class="btn btn-primary">
             </form>
 
@@ -42,17 +46,21 @@
                     <th>书籍名字</th>
                     <th>书籍数量</th>
                     <th>书籍详情</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                <c:forEach var="book" items="${requestScope.get('list')}">
+                <c:forEach var="book" items="${requestScope.get('lists')}">
                     <tr>
                         <td>${book.getBookID()}</td>
                         <td>${book.getBookName()}</td>
                         <td>${book.getBookCount()}</td>
                         <td>${book.getDetail()}</td>
-
+                        <td>
+                            <a href="${pageContext.request.contextPath}/book/toUpdateBook?id=${book.getBookID()}">更改</a> |
+                            <a href="${pageContext.request.contextPath}/book/del/${book.getBookID()}">删除</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>

@@ -19,8 +19,8 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public int addBook(Books books) {
-        bookMapper.addBook(books);
-        return 0;
+
+        return bookMapper.addBook(books);
     }
 
     @Override
@@ -45,5 +45,10 @@ public class BookServiceImpl implements BookService{
     public List<Books> queryAllBook() {
         return bookMapper.queryAllBook();
 
+    }
+
+    @Override
+    public List<Books> queryBook(String bookName) {
+        return  bookMapper.queryBook(bookName);
     }
 }

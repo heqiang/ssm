@@ -11,7 +11,7 @@ public class dao {
     public void  ceshi(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
-        List<Books> booksList = bookService.queryAllBook();
+        List<Books> booksList = bookService.queryBook("j");
         for (Books books : booksList) {
             System.out.println(books);
         }

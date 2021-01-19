@@ -20,4 +20,7 @@
     <select id="queryAllBook" parameterType="book" resultType="book">
         select * from books
     </select>
+    <select id="queryBook"  resultType="book">
+        select * from books where bookName like  "%${bookName}%"
+    </select>
 </mapper>
