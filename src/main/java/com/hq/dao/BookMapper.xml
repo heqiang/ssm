@@ -5,14 +5,14 @@
 
 <mapper namespace="com.hq.dao.BookMapper">
     <insert id="addBook" parameterType="book">
-            insert into books values (#{bookID},#{bookName},#{bookCount},#{detail})
+        insert into books values (#{bookID},#{bookName},#{bookCount},#{detail})
     </insert>
     <delete id="deleteBookById" parameterType="int">
-        delete  from books where bookID = #{bId}
+        delete from books where bookID = #{bId}
     </delete>
     <update id="updateBook" parameterType="book">
         update books set bookName=#{bookName},bookCount=#{bookCount},detail=#{detail}
-            where bookID=#{bookID}
+        where bookID=#{bookID}
     </update>
     <select id="queryBookById" parameterType="int" resultType="book">
         select * from books where bookID=#{bId}
@@ -20,7 +20,7 @@
     <select id="queryAllBook" parameterType="book" resultType="book">
         select * from books
     </select>
-    <select id="queryBook"  resultType="book">
-        select * from books where bookName like  "%${bookName}%"
+    <select id="queryBook" resultType="book">
+        select * from books where bookName like "%${bookName}%"
     </select>
 </mapper>

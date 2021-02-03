@@ -24,9 +24,11 @@
     <div class="row">
         <div class="col-md-4 column">
 
-<%--     查询--%>
-            <form method="post" action="${pageContext.request.contextPath}/book/queryBook" style="float:right;display: inline-block;">
-                    <input type="text" name = "queryBookName" placeholder="请输入要查询的书籍" class="form-control" style="display: inline-block;width: auto;">
+            <%--     查询--%>
+            <form method="post" action="${pageContext.request.contextPath}/book/queryBook"
+                  style="float:right;display: inline-block;">
+                <input type="text" name="queryBookName" placeholder="请输入要查询的书籍" class="form-control"
+                       style="display: inline-block;width: auto;">
                 <input type="submit" value="查询" class="btn btn-primary">
             </form>
 

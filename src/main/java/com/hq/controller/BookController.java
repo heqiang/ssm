@@ -17,45 +17,50 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping("/allBook")
-    public String boo_list(Model model){
+    public String boo_list(Model model) {
         List<Books> books = bookService.queryAllBook();
-        model.addAttribute("list",books);
+        model.addAttribute("list", books);
         return "Allbooks";
     }
+
     @RequestMapping("/toAddBook")
-    public  String toAddBook(){
-        return  "addBook";
+    public String toAddBook() {
+        return "addBook";
     }
+
     @RequestMapping("addBook")
-    public  String AddBook(Books books){
+    public String AddBook(Books books) {
         bookService.addBook(books);
-        return  "redirect:/book/allBook";
+        return "redirect:/book/allBook";
     }
+
     @RequestMapping("/del/{bookid}")
-    public  String delBook(@PathVariable("bookid")int id){
+    public String delBook(@PathVariable("bookid") int id) {
         bookService.deleteBookById(id);
-        return  "redirect:/book/allBook";
+        return "redirect:/book/allBook";
     }
+
     @RequestMapping("/toUpdateBook")
-    public  String toUpdateBook(Model  model, int id){
+    public String toUpdateBook(Model model, int id) {
         Books books = bookService.queryBookById(id);
-        model.addAttribute("book",books);
+        model.addAttribute("book", books);
         return "update";
     }
+
     @RequestMapping("/updateBook")
-    public String updateBook(Model  model ,Books book){
+    public String updateBook(Model model, Books book) {
         bookService.updateBook(book);
         //更新mode中的book
         Books books = bookService.queryBookById(book.getBookID());
-        model.addAttribute("book",books);
+        model.addAttribute("book", books);
         return "redirect:/book/allBook";
     }
 
     @RequestMapping("/queryBook")
-    public  String queryBook(String queryBookName,Model model){
+    public String queryBook(String queryBookName, Model model) {
         System.out.println(queryBookName);
         List<Books> books = bookService.queryBook(queryBookName);
-        model.addAttribute("list",books);
+        model.addAttribute("list", books);
         return "Allbooks";
 
     }

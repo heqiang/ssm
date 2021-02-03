@@ -8,7 +8,7 @@ import java.util.List;
 
 public class dao {
     @Test
-    public void  ceshi(){
+    public void ceshi() {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
         List<Books> booksList = bookService.queryBook("j");

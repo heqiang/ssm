@@ -4,14 +4,14 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-<!--    <settings>-->
-<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
-<!--    </settings>-->
+    <!--    <settings>-->
+    <!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+    <!--    </settings>-->
     <typeAliases>
-        <typeAlias type="com.hq.pojo.Books" alias="book" />
+        <typeAlias type="com.hq.pojo.Books" alias="book"/>
     </typeAliases>
 
     <mappers>
-        <mapper  resource="com/hq/dao/BookMapper.xml"/>
+        <mapper resource="com/hq/dao/BookMapper.xml"/>
     </mappers>
 </configuration>

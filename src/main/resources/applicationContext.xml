@@ -6,8 +6,8 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        ">
 
-        <import resource="spring-dao1.xml"/>
-        <import resource="spring-service.xml"/>
-        <import resource="spring-mvc.xml"/>
+    <import resource="spring-dao1.xml"/>
+    <import resource="spring-service.xml"/>
+    <import resource="spring-mvc.xml"/>
 
 </beans>

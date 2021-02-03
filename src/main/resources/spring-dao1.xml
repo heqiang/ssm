@@ -22,7 +22,7 @@
         druid:
 
     -->
-    <bean  id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${driver}"/>
         <property name="jdbcUrl" value="${url}"/>
         <property name="user" value="${user}"/>
@@ -53,9 +53,9 @@
         <!-- 给出需要扫描Dao接口包 -->
         <property name="basePackage" value="com.hq.dao"/>
     </bean>
-<!--  事务管理-->
+    <!--  事务管理-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <constructor-arg ref="dataSource" />
+        <constructor-arg ref="dataSource"/>
     </bean>
     <tx:advice id="txAdvice">
         <tx:attributes>
@@ -65,6 +65,6 @@
 
     <aop:config>
         <aop:pointcut id="pointcut" expression="execution(* com.hq.dao.*.*(..))"/>
-        <aop:advisor advice-ref="txAdvice"  pointcut-ref="pointcut"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"/>
     </aop:config>
 </beans>

@@ -11,18 +11,18 @@
       http://www.springframework.org/schema/context/spring-context.xsd
 
 ">
-<!-- 注册驱动-->
-<mvc:annotation-driven/>
-<!--   静态资源过滤-->
-<mvc:default-servlet-handler/>
-<!--    扫描包：controller-->
+    <!-- 注册驱动-->
+    <mvc:annotation-driven/>
+    <!--   静态资源过滤-->
+    <mvc:default-servlet-handler/>
+    <!--    扫描包：controller-->
     <context:component-scan base-package="com.hq.controller"/>
-<!-- 视图解析器 -->
-<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-    <property name="prefix" value="/WEB-INF/jsp/" />
-    <property name="suffix" value=".jsp" />
-</bean>
+    <!-- 视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 
-    <context:component-scan base-package="com.hq.controller" />
+    <context:component-scan base-package="com.hq.controller"/>
 </beans>

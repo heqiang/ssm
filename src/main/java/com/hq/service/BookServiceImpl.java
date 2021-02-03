@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
 
 
-    private BookMapper  bookMapper;
+    private BookMapper bookMapper;
 
     public void setBookMapper(BookMapper bookMapper) {
         this.bookMapper = bookMapper;
@@ -31,7 +31,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public int updateBook(Books books) {
-        return  bookMapper.updateBook(books);
+        return bookMapper.updateBook(books);
 
     }
 
@@ -49,6 +49,6 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public List<Books> queryBook(String bookName) {
-        return  bookMapper.queryBook(bookName);
+        return bookMapper.queryBook(bookName);
     }
 }
